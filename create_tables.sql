@@ -15,6 +15,15 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Drop existing tables and sequences
+--
+
+DROP TABLE IF EXISTS chat_log CASCADE;
+DROP TABLE IF EXISTS stream_log CASCADE;
+DROP SEQUENCE IF EXISTS chat_log_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS stream_log_id_seq CASCADE;
+
+--
 -- Name: chat_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
