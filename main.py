@@ -11,9 +11,11 @@ def main():
                         help="the filename to log to", default=None)
     parser.add_argument("-c", "--channels", dest="channels", type=str, nargs='+',
                         help="the specific channel names to log", default=[])
+    parser.add_argument("-l", "--channel-filename", dest="channel_filename",
+                        help="the filename containing all the specific channels", default=None)
     args = parser.parse_args()
 
-    manager = TwitchManager(channels_amount=args.channels_amount, channels=args.channels, log_filename=args.log_filename)
+    manager = TwitchManager(channels_amount=args.channels_amount, channels=args.channels, log_filename=args.log_filename, channel_filename=args.channel_filename)
     try:
         manager.run_log_loop()
     except KeyboardInterrupt:
